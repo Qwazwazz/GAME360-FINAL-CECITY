@@ -76,3 +76,7 @@ func die() -> void:
 	set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
 	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://game_over/game_over.tscn")
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.

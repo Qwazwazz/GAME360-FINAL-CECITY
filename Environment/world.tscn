@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://0othhtw3uxjm"]
+[gd_scene load_steps=18 format=4 uid="uid://0othhtw3uxjm"]
 
 [ext_resource type="Texture2D" uid="uid://jveoay4jtdx2" path="res://Environment/Parallax/Tileset Ancient Forest.png" id="1_qckh1"]
 [ext_resource type="Texture2D" uid="uid://d3x47nhqw2jsy" path="res://Environment/Parallax/Forest Prop.png" id="1_tvrg8"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c7batmu4heg5y" path="res://Environment/Parallax/ForeGround.png" id="7_oayao"]
 [ext_resource type="PackedScene" uid="uid://dxaq80evuf3gd" path="res://skeleton/skeleton.tscn" id="8_qqbwj"]
 [ext_resource type="PackedScene" uid="uid://ciba8orbr8d8a" path="res://Environment/GraveEnvironment/fence.tscn" id="9_aym5n"]
+[ext_resource type="Script" uid="uid://3krxc6x84fha" path="res://Environment/pause_menu.gd" id="11_tnq5l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aym5n"]
 texture = ExtResource("1_tvrg8")
@@ -1636,4 +1637,20 @@ position = Vector2(2842, 471)
 z_index = 30
 position = Vector2(2885, 472)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="PauseMenu" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("11_tnq5l")
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 0.49019608)
+
+[node name="Button" type="Button" parent="PauseMenu"]
+offset_left = 126.0
+offset_top = 68.0
+offset_right = 193.0
+offset_bottom = 99.0
+text = "resume"
+
+[connection signal="pressed" from="PauseMenu/Button" to="Skeleton" method="_on_button_pressed"]
