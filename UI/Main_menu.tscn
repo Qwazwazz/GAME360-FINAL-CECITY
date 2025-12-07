@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://btftewycsi3am" path="res://Environment/Parallax/MiddleTrees.png" id="3_rlxw3"]
 [ext_resource type="Texture2D" uid="uid://b4ugbijgo54qd" path="res://Environment/Parallax/NearTrees.png" id="4_rlxw3"]
 [ext_resource type="Texture2D" uid="uid://c7batmu4heg5y" path="res://Environment/Parallax/ForeGround.png" id="5_5kukc"]
-[ext_resource type="FontFile" uid="uid://c6qceo0ymln6p" path="res://UI/Fonts/CHINESETAKEAWAY.ttf" id="6_8ovav"]
+[ext_resource type="FontFile" uid="uid://c6qceo0ymln6p" path="res://ui/Fonts/CHINESETAKEAWAY.ttf" id="6_8ovav"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siod4"]
 bg_color = Color(1, 1, 1, 1)

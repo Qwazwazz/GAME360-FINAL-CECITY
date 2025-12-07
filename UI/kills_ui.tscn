@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bi1ddsgirna8b"]
 
-[ext_resource type="LabelSettings" uid="uid://csxlf2hot5oiy" path="res://ui/default_label_settings.tres" id="1_6lyv1"]
+[ext_resource type="LabelSettings" uid="uid://csxlf2hot5oiy" path="res://ui/Fonts/default_label_settings.tres" id="1_6lyv1"]
 [ext_resource type="Script" uid="uid://xfvjv4aujh4k" path="res://ui/kills_ui.gd" id="1_mkjc8"]
 
 [node name="KillsUI" type="HBoxContainer"]

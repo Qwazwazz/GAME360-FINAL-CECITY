@@ -5,8 +5,8 @@ const HIT_BURST_PARTICLE = preload("res://effects/hit_burst_effect.tscn")
 var game: Game = load("res://Scripts/game.tres")
 
 @export var walk_speed: = 30.0
-@export var attack_range: = 150.0
-@export var retreat_range: = 99.0
+@export var attack_range: = 32.0
+@export var retreat_range: = 30.0
 @export var stats: Stats
 
 @onready var healthbar: ProgressBar = $Healthbar

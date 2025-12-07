@@ -1,12 +1,12 @@
 [gd_scene load_steps=32 format=3 uid="uid://b1hdrqiu7ywjk"]
 
-[ext_resource type="Script" uid="uid://crbrq0bqex4a5" path="res://knight.gd" id="1_0whgt"]
-[ext_resource type="Texture2D" uid="uid://3lqibyco84nr" path="res://knight/knight.png" id="2_6gdd4"]
-[ext_resource type="Script" uid="uid://ba6n60ecfnao3" path="res://unit_mover.gd" id="2_ew415"]
-[ext_resource type="Script" uid="uid://8ybfhjc8hiwx" path="res://stats.gd" id="2_okdvf"]
+[ext_resource type="Script" uid="uid://crbrq0bqex4a5" path="res://Scripts/knight.gd" id="1_0whgt"]
+[ext_resource type="Script" uid="uid://ba6n60ecfnao3" path="res://Scripts/unit_mover.gd" id="2_ew415"]
+[ext_resource type="Script" uid="uid://8ybfhjc8hiwx" path="res://Scripts/stats.gd" id="2_okdvf"]
 [ext_resource type="Script" uid="uid://dgw8c2gffsb6t" path="res://damage_boxes/hurtbox.gd" id="3_ew415"]
-[ext_resource type="Script" uid="uid://dhnl7x8x67py" path="res://skeleton_targeter.gd" id="4_f5jhb"]
+[ext_resource type="Script" uid="uid://dhnl7x8x67py" path="res://Scripts/skeleton_targeter.gd" id="4_f5jhb"]
 [ext_resource type="Script" uid="uid://rwphv8v5rxdk" path="res://damage_boxes/hitbox.gd" id="4_okdvf"]
+[ext_resource type="Texture2D" uid="uid://d0icyipysirp" path="res://Enemies/Knight/knight_eye-sheet.png" id="5_8vp70"]
 [ext_resource type="PackedScene" uid="uid://r2pk5nl6ec2m" path="res://ui/healthbar.tscn" id="7_okdvf"]
 [ext_resource type="AudioStream" uid="uid://dhiaht5v1pm1f" path="res://audio/miss.wav" id="8_8vp70"]
 [ext_resource type="AudioStream" uid="uid://b4qi76f6pvf0h" path="res://audio/hit.wav" id="9_8vp70"]
@@ -424,7 +424,7 @@ nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_mwio0")
 nodes/StateMachine/position = Vector2(40, 100)
 node_connections = [&"output", 0, &"StateMachine"]
 
-[node name="knight" type="CharacterBody2D"]
+[node name="knight" type="CharacterBody2D" groups=["cave_enemies", "outside_enemies"]]
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_0whgt")
@@ -444,7 +444,7 @@ metadata/_custom_type_script = "uid://dhnl7x8x67py"
 [node name="Anchor" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Anchor"]
-texture = ExtResource("2_6gdd4")
+texture = ExtResource("5_8vp70")
 offset = Vector2(18, -24)
 hframes = 25
 
@@ -470,7 +470,7 @@ position = Vector2(0.5, -15.5)
 shape = SubResource("RectangleShape2D_0whgt")
 debug_color = Color(3.706068e-06, 0.6453539, 0.26850444, 0.41960785)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." groups=["enemies"]]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_qy8x7")
 }
@@ -489,4 +489,3 @@ offset_top = -40.0
 offset_bottom = -36.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-bus = &"Sounds"

@@ -1,11 +1,11 @@
-class_name FlyingEnemy extends Node2D
+extends Node2D
 
-const FEATHER_BURST_EFFECT = preload("res://crow/feather_burst_effect.tscn")
+const FODDER_BURST_EFFECT = preload("res://Effects/fodder_burst_effect.tscn")
 
 var game: Game = load("res://Scripts/game.tres")
 
 @export var direction: = Vector2.LEFT
-@export var speed: = 75
+@export var speed: = 40
 
 @onready var sprite_2d: Sprite2D = $Anchor/Sprite2D
 @onready var anchor: Node2D = $Anchor
@@ -32,9 +32,9 @@ func _process(delta: float) -> void:
 			translate((direction + Vector2(0, -0.5)) * speed * delta)
 
 func _on_hurt(other_hitbox: Hitbox) -> void:
-	var feather_burst_effect = FEATHER_BURST_EFFECT.instantiate()
-	get_tree().current_scene.add_child(feather_burst_effect)
-	feather_burst_effect.global_position = sprite_2d.global_position
+	var fodder_burst_effect = FODDER_BURST_EFFECT.instantiate()
+	get_tree().current_scene.add_child(fodder_burst_effect)
+	fodder_burst_effect.global_position = sprite_2d.global_position
 	game.kills += 1
 	queue_free()
 

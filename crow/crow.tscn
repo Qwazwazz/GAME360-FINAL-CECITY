@@ -5,6 +5,11 @@
 [ext_resource type="Script" uid="uid://dgw8c2gffsb6t" path="res://damage_boxes/hurtbox.gd" id="3_070wk"]
 [ext_resource type="Script" uid="uid://rwphv8v5rxdk" path="res://damage_boxes/hitbox.gd" id="3_chsdj"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1jrl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_070wk"]
+radius = 8.0
+
 [sub_resource type="Animation" id="Animation_chsdj"]
 length = 0.001
 tracks/0/type = "value"
@@ -63,17 +68,11 @@ states/FlyAwayState/position = Vector2(558, 98)
 transitions = ["Start", "ChaseState", SubResource("AnimationNodeStateMachineTransition_rsni3"), "ChaseState", "FlyAwayState", SubResource("AnimationNodeStateMachineTransition_xhjwl")]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_kdu1p"]
-graph_offset = Vector2(-292, 120)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_tm1ce")
 nodes/StateMachine/position = Vector2(40, 140)
 node_connections = [&"output", 0, &"StateMachine"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_c1jrl"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_070wk"]
-radius = 8.0
-
-[node name="Crow" type="Node2D" groups=["enemies"]]
+[node name="Crow" type="Node2D" groups=["outside_enemies"]]
 script = ExtResource("1_nbawx")
 
 [node name="Anchor" type="Node2D" parent="."]
@@ -82,16 +81,6 @@ script = ExtResource("1_nbawx")
 position = Vector2(0, -24)
 texture = ExtResource("1_rowo5")
 hframes = 5
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_070wk")
-}
-autoplay = "fly"
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeBlendTree_kdu1p")
-anim_player = NodePath("../AnimationPlayer")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 16
@@ -114,3 +103,13 @@ metadata/_custom_type_script = "uid://rwphv8v5rxdk"
 position = Vector2(0, -25)
 shape = SubResource("CircleShape2D_070wk")
 debug_color = Color(0.98768944, 0, 0.315328, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_070wk")
+}
+autoplay = "fly"
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_kdu1p")
+anim_player = NodePath("../AnimationPlayer")

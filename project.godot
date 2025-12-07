@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ResourceStash="*res://resource_stash.gd"
+ResourceStash="*res://Scripts/resource_stash.gd"
 Music="*res://audio/music.tscn"
 
 [display]
@@ -32,8 +32,9 @@ window/vsync/vsync_mode=0
 [global_group]
 
 active_spawn_points=""
-enemies=""
 bosses=""
+cave_enemies=""
+outside_enemies=""
 
 [input]
 

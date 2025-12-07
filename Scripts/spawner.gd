@@ -7,7 +7,7 @@ const BOSS_ENEMY = preload("res://boss/boss.tscn")
 var max_enemies: = 5
 var max_bosses: = 1
 
-var game: Game = load("res://game.tres")
+var game: Game = load("res://Scripts/game.tres")
 
 @onready var timer: Timer = $Timer
 

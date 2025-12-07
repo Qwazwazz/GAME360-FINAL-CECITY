@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://1aca7ten0twj"
-path="res://.godot/imported/Real Chinese.otf-a33565359c29c59565377dcf9a514dbb.fontdata"
+path="res://.godot/imported/Real Chinese.otf-1886335048a1cefcbef9e0421dfa3e23.fontdata"
 
 [deps]
 
-source_file="res://UI/Fonts/Real Chinese.otf"
-dest_files=["res://.godot/imported/Real Chinese.otf-a33565359c29c59565377dcf9a514dbb.fontdata"]
+source_file="res://ui/Fonts/Real Chinese.otf"
+dest_files=["res://.godot/imported/Real Chinese.otf-1886335048a1cefcbef9e0421dfa3e23.fontdata"]
 
 [params]
 

@@ -2,7 +2,7 @@ class_name GroundedEnemy extends CharacterBody2D
 
 const HIT_BURST_PARTICLE = preload("res://effects/hit_burst_effect.tscn")
 
-var game: Game = load("res://game.tres")
+var game: Game = load("res://Scripts/game.tres")
 
 @export var walk_speed: = 30.0
 @export var attack_range: = 32.0
@@ -23,8 +23,8 @@ func _ready() -> void:
 	hurtbox.hurt.connect(_on_hurt.call_deferred)
 
 func _physics_process(delta: float) -> void:
-	if position.y <= -50: queue_free()
-	if position.x <= -50 or position.x >= 1394: queue_free()
+	#if position.y <= -50: queue_free()
+	#if position.x <= -50 or position.x >= 1394: queue_free()
 	
 	var state = playback.get_current_node()
 	match state:

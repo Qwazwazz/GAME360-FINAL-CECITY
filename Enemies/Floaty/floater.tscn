@@ -1,0 +1,119 @@
+[gd_scene load_steps=16 format=3 uid="uid://c40dcc28i36vt"]
+
+[ext_resource type="Script" uid="uid://dibopfbi4kfy6" path="res://Enemies/Floaty/floater.gd" id="1_akbta"]
+[ext_resource type="Texture2D" uid="uid://duknkikgn08kb" path="res://Enemies/Floaty/Cecity_Fodder.png" id="1_mnhii"]
+[ext_resource type="Script" uid="uid://dgw8c2gffsb6t" path="res://damage_boxes/hurtbox.gd" id="2_akbta"]
+[ext_resource type="Script" uid="uid://rwphv8v5rxdk" path="res://damage_boxes/hitbox.gd" id="3_e17p3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vbo6i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_khyjy"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_75bkk"]
+resource_name = "Fly"
+length = 0.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_4cufe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wpsob"]
+_data = {
+&"Fly": SubResource("Animation_75bkk"),
+&"RESET": SubResource("Animation_4cufe")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vbo6i"]
+animation = &"Fly"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e17p3"]
+animation = &"Fly"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_khyjy"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_75bkk"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4xb7o"]
+states/ChaseState/node = SubResource("AnimationNodeAnimation_vbo6i")
+states/ChaseState/position = Vector2(358, 100)
+states/FlyAwayState/node = SubResource("AnimationNodeAnimation_e17p3")
+states/FlyAwayState/position = Vector2(539, 100)
+transitions = ["Start", "ChaseState", SubResource("AnimationNodeStateMachineTransition_khyjy"), "ChaseState", "FlyAwayState", SubResource("AnimationNodeStateMachineTransition_75bkk")]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3whtt"]
+graph_offset = Vector2(-294, 93)
+nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_4xb7o")
+nodes/StateMachine/position = Vector2(20, 140)
+node_connections = [&"output", 0, &"StateMachine"]
+
+[node name="Floater" type="Node2D" groups=["cave_enemies"]]
+script = ExtResource("1_akbta")
+
+[node name="Anchor" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Anchor"]
+position = Vector2(0, -22)
+texture = ExtResource("1_mnhii")
+flip_h = true
+hframes = 6
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("2_akbta")
+metadata/_custom_type_script = "uid://dgw8c2gffsb6t"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_vbo6i")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("3_e17p3")
+knockback_amount = 100.0
+metadata/_custom_type_script = "uid://rwphv8v5rxdk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_khyjy")
+debug_color = Color(0.98768944, 0, 0.315328, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wpsob")
+}
+autoplay = "Fly"
+speed_scale = 0.25
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+callback_mode_discrete = 1
+tree_root = SubResource("AnimationNodeBlendTree_3whtt")
+anim_player = NodePath("../AnimationPlayer")
