@@ -8,6 +8,7 @@ const BONES_BURST_EFFECT = preload("res://effects/bones_burst_effect.tscn")
 
 @export var can_combo: = false
 
+@onready var healthbar: HealthBar = $Healthbar
 @onready var anchor: Node2D = $Anchor
 @onready var unit_mover: UnitMover = $UnitMover
 @onready var animation_tree: AnimationTree = $AnimationTree
@@ -21,6 +22,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
 	stats.no_health.connect(die)
+	healthbar.stats = stats
 	hurtbox.hurt.connect(_on_hurt.call_deferred)
 
 func _physics_process(delta: float) -> void:
@@ -76,7 +78,3 @@ func die() -> void:
 	set_deferred("process_mode", Node.PROCESS_MODE_DISABLED)
 	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://game_over/game_over.tscn")
-
-
-func _on_button_pressed() -> void:
-	pass # Replace with function body.
