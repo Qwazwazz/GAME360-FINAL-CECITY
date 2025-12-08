@@ -46,5 +46,5 @@ func _update_group_state():
 
 func spawn_enemy(enemy_scene: PackedScene):
 	var enemy = enemy_scene.instantiate()
-	get_tree().current_scene.add_child(enemy)
 	enemy.global_position = global_position
+	get_tree().current_scene.add_child(enemy)
