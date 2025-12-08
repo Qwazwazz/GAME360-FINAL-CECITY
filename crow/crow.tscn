@@ -72,7 +72,7 @@ nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_tm1ce")
 nodes/StateMachine/position = Vector2(40, 140)
 node_connections = [&"output", 0, &"StateMachine"]
 
-[node name="Crow" type="Node2D" groups=["outside_enemies"]]
+[node name="Crow" type="Node2D" groups=["enemies"]]
 script = ExtResource("1_nbawx")
 
 [node name="Anchor" type="Node2D" parent="."]

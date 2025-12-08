@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dxaq80evuf3gd"]
+[gd_scene load_steps=46 format=3 uid="uid://dxaq80evuf3gd"]
 
 [ext_resource type="Texture2D" uid="uid://b48m1blbqoctp" path="res://skeleton/skeleton.png" id="1_crlql"]
 [ext_resource type="Script" uid="uid://cx021llreyv2l" path="res://Scripts/Player/skeleton.gd" id="1_plk42"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://ctt3gfrnwwfqw" path="res://audio/medium_hit.wav" id="8_a5ci1"]
 [ext_resource type="AudioStream" uid="uid://c2nqf35dnurnq" path="res://audio/footstep.wav" id="8_wbq12"]
 [ext_resource type="AudioStream" uid="uid://dhiaht5v1pm1f" path="res://audio/miss.wav" id="9_a5ci1"]
+[ext_resource type="PackedScene" uid="uid://r2pk5nl6ec2m" path="res://ui/healthbar.tscn" id="11_xs47n"]
 
 [sub_resource type="Resource" id="Resource_73gel"]
 script = ExtResource("2_hd5up")
@@ -770,3 +771,7 @@ advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Healthbar" parent="." instance=ExtResource("11_xs47n")]
+offset_top = -38.0
+offset_bottom = -34.0
