@@ -7,6 +7,7 @@ var game: Game = load("res://Scripts/game.tres")
 @export var direction: = Vector2.LEFT
 @export var speed: = 40
 
+@onready var skeleton_targeter: SkeletonTargeter = $SkeletonTargeter
 @onready var sprite_2d: Sprite2D = $Anchor/Sprite2D
 @onready var anchor: Node2D = $Anchor
 @onready var hitbox: Hitbox = $Hitbox
