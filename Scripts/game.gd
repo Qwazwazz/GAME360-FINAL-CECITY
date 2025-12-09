@@ -30,14 +30,20 @@ func _process_kill_logic() -> void:
 		if areas_cleared < 3:
 			kills = 0
 		
-		area_cleared.emit()
+		display_arrow()
 		print("Area Cleared")
 		
 		if areas_cleared == 3:
 			boss_fight.emit()
 		
 		if areas_cleared == 4:
-			show_final_kills.emit()
+			display_kills()
+
+func display_arrow() -> void:
+	area_cleared.emit()
 
 func reset_ui_kills() -> void:
 	reset_kills.emit()
+
+func display_kills() -> void:
+	show_final_kills.emit()

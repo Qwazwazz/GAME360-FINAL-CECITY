@@ -10,6 +10,7 @@ script = ExtResource("1_mkjc8")
 
 [node name="KillsLabel" type="Label" parent="."]
 layout_mode = 2
+text = "GO!"
 label_settings = ExtResource("1_6lyv1")
 
 [node name="KillsValue" type="Label" parent="."]

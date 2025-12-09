@@ -42,13 +42,13 @@ func _ready() -> void:
 			spawn_point.spawn_enemy(enemy_scenes.pick_random())
 		
 		var elite_count = get_tree().get_node_count_in_group("elites")
-		if elite_count < max_elites and game.kills >= 15  and get_tree().get_node_count_in_group:
+		if elite_count < max_elites and get_tree().get_node_count_in_group("active_spawn_points") > 0:
 			var spawn_points = get_tree().get_nodes_in_group("active_spawn_points")
 			var spawn_point = spawn_points.pick_random() as SpawnPoint
 			spawn_point.spawn_enemy(ELITE_ENEMY)
 		
 		var boss_count = get_tree().get_node_count_in_group("bosses")
-		if boss_count < max_bosses and game.kills >= 15  and get_tree().get_node_count_in_group:
+		if boss_count < max_bosses and get_tree().get_node_count_in_group("active_spawn_points") > 0:
 			var spawn_points = get_tree().get_nodes_in_group("active_spawn_points")
 			var spawn_point = spawn_points.pick_random() as SpawnPoint
 			spawn_point.spawn_enemy(BOSS_ENEMY)

@@ -156,9 +156,12 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.45, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"spawn_underling"
+}, {
 "args": [],
 "method": &"die"
 }]
@@ -179,6 +182,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id="Animation_b8hbm"]
 resource_name = "hit"
 length = 0.2
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -268,6 +272,23 @@ tracks/2/keys = {
 "update": 1,
 "values": [PackedVector2Array()]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"spawn_underling"
+}, {
+"args": [],
+"method": &"spawn_underling"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r8dvr"]
 _data = {
@@ -335,13 +356,14 @@ transitions = ["Start", "ChaseState", SubResource("AnimationNodeStateMachineTran
 graph_offset = Vector2(-89, -36)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_b8hbm"]
-graph_offset = Vector2(-221, 68)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_a7wjy")
 nodes/StateMachine/position = Vector2(-20, 120)
 node_connections = [&"output", 0, &"StateMachine"]
 
 [node name="elite" type="CharacterBody2D" groups=["elites", "enemies"]]
 script = ExtResource("1_pt1gi")
+walk_speed = 100.0
+attack_range = 35.0
 stats = SubResource("Resource_f2ymf")
 
 [node name="UnitMover" type="Node" parent="." node_paths=PackedStringArray("unit", "flip_node")]

@@ -1,6 +1,7 @@
 class_name Skeleton extends CharacterBody2D
 
 const BONES_BURST_EFFECT = preload("res://effects/bones_burst_effect.tscn")
+var game: Game = load("res://Scripts/game.tres")
 
 @export var run_speed: = 100.0
 @export var roll_speed: = 175.0
