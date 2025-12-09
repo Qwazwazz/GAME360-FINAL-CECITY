@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dhnl7x8x67py" path="res://Scripts/skeleton_targeter.gd" id="4_f5jhb"]
 [ext_resource type="Script" uid="uid://rwphv8v5rxdk" path="res://damage_boxes/hitbox.gd" id="4_okdvf"]
 [ext_resource type="Texture2D" uid="uid://d0icyipysirp" path="res://Enemies/Knight/knight_eye-sheet.png" id="5_8vp70"]
-[ext_resource type="PackedScene" uid="uid://r2pk5nl6ec2m" path="res://ui/healthbar.tscn" id="7_okdvf"]
+[ext_resource type="PackedScene" uid="uid://r2pk5nl6ec2m" path="res://UI/healthbar.tscn" id="7_okdvf"]
 [ext_resource type="AudioStream" uid="uid://dhiaht5v1pm1f" path="res://audio/miss.wav" id="8_8vp70"]
 [ext_resource type="AudioStream" uid="uid://b4qi76f6pvf0h" path="res://audio/hit.wav" id="9_8vp70"]
 
@@ -489,3 +489,4 @@ offset_top = -40.0
 offset_bottom = -36.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Sounds"

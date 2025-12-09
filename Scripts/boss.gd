@@ -49,7 +49,9 @@ func _physics_process(delta: float) -> void:
 			pass
 
 func die() -> void:
-	queue_free()
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file("res://game_over/game_win.tscn")
+
 
 func _on_hurt(other_hitbox: Hitbox) -> void:
 	hit_sound_effect.play()

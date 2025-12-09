@@ -35,6 +35,8 @@ active_spawn_points=""
 bosses=""
 cave_enemies=""
 outside_enemies=""
+enemies=""
+elites=""
 
 [input]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://0othhtw3uxjm"]
+[gd_scene load_steps=28 format=4 uid="uid://0othhtw3uxjm"]
 
 [ext_resource type="PackedScene" uid="uid://cdjvfj0cbt5x7" path="res://Environment/GraveEnvironment/spawner.tscn" id="1_gvvw3"]
 [ext_resource type="Texture2D" uid="uid://jveoay4jtdx2" path="res://Environment/Parallax/Tileset Ancient Forest.png" id="1_qckh1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://drh1loqygqlaw" path="res://Environment/GraveEnvironment/spawn_point.tscn" id="2_oayao"]
 [ext_resource type="Texture2D" uid="uid://ctxkt2cbyab7v" path="res://Environment/Parallax/BackGround.png" id="2_qqbwj"]
 [ext_resource type="PackedScene" uid="uid://sgq86lt4wmyg" path="res://crow/crow.tscn" id="2_th62x"]
+[ext_resource type="PackedScene" uid="uid://b1hdrqiu7ywjk" path="res://knight/knight.tscn" id="3_lwmwr"]
 [ext_resource type="Texture2D" uid="uid://b4i1oc4sv8nwl" path="res://Environment/Parallax/FarTrees.png" id="3_tvrg8"]
 [ext_resource type="Texture2D" uid="uid://btftewycsi3am" path="res://Environment/Parallax/MiddleTrees.png" id="4_aym5n"]
 [ext_resource type="PackedScene" uid="uid://c40dcc28i36vt" path="res://Enemies/Floaty/floater.tscn" id="4_fomv7"]
@@ -19,6 +20,15 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_th62x"]
 size = Vector2(2058, 230)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fmkf"]
+size = Vector2(1409, 215)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i18xf"]
+size = Vector2(1891, 443)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fomv7"]
+size = Vector2(1424, 328)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aym5n"]
 texture = ExtResource("1_tvrg8")
@@ -1555,6 +1565,517 @@ sources/0 = SubResource("TileSetAtlasSource_gvvw3")
 layout_mode = 3
 anchors_preset = 0
 
+[node name="Spawner" parent="." node_paths=PackedStringArray("outside_area", "cave_area_1", "cave_area_2", "boss_arena") instance=ExtResource("1_gvvw3")]
+outside_enemies = Array[PackedScene]([ExtResource("2_th62x"), ExtResource("3_lwmwr")])
+cave_enemies_1 = Array[PackedScene]([ExtResource("4_fomv7"), ExtResource("3_lwmwr")])
+cave_enemies_2 = Array[PackedScene]([ExtResource("4_fomv7"), ExtResource("3_lwmwr")])
+boss_arena_enemies = Array[PackedScene]([ExtResource("3_lwmwr"), ExtResource("2_th62x"), ExtResource("4_fomv7")])
+outside_area = NodePath("../Battle Area 1/OutsideArea")
+cave_area_1 = NodePath("../Battle Area 2/Cave_Area_1")
+cave_area_2 = NodePath("../Battle Area 3/Cave_Area_2")
+boss_arena = NodePath("../Battle Area 4/Boss_Arena")
+
+[node name="Battle Area 1" type="Node2D" parent="."]
+
+[node name="Area 1 Exit" parent="Battle Area 1" node_paths=PackedStringArray("battle_area", "area_collision") instance=ExtResource("9_aym5n")]
+position = Vector2(5533, 472)
+battle_area = NodePath("..")
+area_collision = NodePath("../OutsideArea")
+
+[node name="OutsideArea" type="Area2D" parent="Battle Area 1"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle Area 1/OutsideArea"]
+position = Vector2(4494, 358)
+shape = SubResource("RectangleShape2D_th62x")
+
+[node name="OutsideSpawnPoints" type="Node2D" parent="Battle Area 1/OutsideArea"]
+
+[node name="SpawnPoint" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4451, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint2" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4515, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint3" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4579, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint4" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4643, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint20" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4707, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint21" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4771, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint22" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4835, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint23" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4899, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint24" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4963, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint25" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5027, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint26" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5091, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint27" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5155, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint28" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5219, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint29" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5283, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint30" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5347, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint31" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5411, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint32" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5475, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint5" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4387, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint6" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4323, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint7" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4259, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint8" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4195, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint9" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4131, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint10" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4067, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint11" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4003, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint12" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3939, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint13" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3875, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint14" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3843, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint15" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3779, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint16" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3715, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint17" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3651, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint18" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3587, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint19" parent="Battle Area 1/OutsideArea/OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3523, 472)
+activation_area = NodePath("../..")
+
+[node name="Battle Area 2" type="Node2D" parent="."]
+position = Vector2(2092, 223)
+
+[node name="Area 2 Exit" parent="Battle Area 2" node_paths=PackedStringArray("battle_area", "area_collision") instance=ExtResource("9_aym5n")]
+z_index = 20
+position = Vector2(4886, 472)
+battle_area = NodePath("..")
+area_collision = NodePath("../Cave_Area_1")
+
+[node name="Cave_Area_1" type="Area2D" parent="Battle Area 2"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle Area 2/Cave_Area_1"]
+position = Vector2(4175.5, 364.5)
+shape = SubResource("RectangleShape2D_2fmkf")
+
+[node name="Cave1SpawnPoints" type="Node2D" parent="Battle Area 2/Cave_Area_1"]
+
+[node name="SpawnPoint" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4451, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint2" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4515, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint3" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4579, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint4" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4643, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint20" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4707, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint21" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4771, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint22" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4835, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint5" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4387, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint6" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4323, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint7" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4259, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint8" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4195, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint9" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4131, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint10" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4067, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint11" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4003, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint12" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3939, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint13" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3875, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint14" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3843, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint15" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3779, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint16" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3715, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint17" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3651, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint18" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3587, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint19" parent="Battle Area 2/Cave_Area_1/Cave1SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3523, 472)
+activation_area = NodePath("../..")
+
+[node name="Battle Area 3" type="Node2D" parent="."]
+position = Vector2(3257, 735)
+
+[node name="Area 3 Exit" parent="Battle Area 3" node_paths=PackedStringArray("battle_area", "area_collision") instance=ExtResource("9_aym5n")]
+z_index = 20
+position = Vector2(5403, 472)
+battle_area = NodePath("..")
+area_collision = NodePath("../Cave_Area_2")
+
+[node name="Cave_Area_2" type="Area2D" parent="Battle Area 3"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle Area 3/Cave_Area_2"]
+position = Vector2(4451.5, 250.5)
+shape = SubResource("RectangleShape2D_i18xf")
+
+[node name="Cave2SpawnPoints" type="Node2D" parent="Battle Area 3/Cave_Area_2"]
+
+[node name="SpawnPoint" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4451, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint2" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4515, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint3" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4579, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint4" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4643, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint20" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4707, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint21" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4771, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint22" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4835, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint23" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4911, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint24" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4983, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint25" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5111, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint26" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5047, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint27" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5175, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint28" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5239, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint29" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5311, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint30" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(5375, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint5" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4387, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint6" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4323, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint7" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4259, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint8" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4195, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint9" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4131, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint10" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4067, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint11" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4003, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint12" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3939, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint13" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3875, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint14" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3843, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint15" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3779, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint16" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3715, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint17" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3651, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint18" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3587, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint19" parent="Battle Area 3/Cave_Area_2/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3523, 472)
+activation_area = NodePath("../..")
+
+[node name="Battle Area 4" type="Node2D" parent="."]
+position = Vector2(5936, 1008)
+
+[node name="Area 4 Exit" parent="Battle Area 4" instance=ExtResource("9_aym5n")]
+z_index = 20
+position = Vector2(4944, 104)
+script = null
+
+[node name="Boss_Arena" type="Area2D" parent="Battle Area 4"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Cave2SpawnPoints" type="Node2D" parent="Battle Area 4/Boss_Arena"]
+
+[node name="SpawnPoint" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4451, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint2" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4515, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint3" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4579, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint4" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4643, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint20" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4707, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint21" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4771, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint22" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4835, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint23" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4911, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint5" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4387, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint6" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4323, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint7" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4259, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint8" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4195, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint9" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4131, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint10" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4067, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint11" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(4003, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint12" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3939, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint13" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3875, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint14" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3843, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint15" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3779, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint16" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3715, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint17" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3651, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint18" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3587, 472)
+activation_area = NodePath("../..")
+
+[node name="SpawnPoint19" parent="Battle Area 4/Boss_Arena/Cave2SpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
+position = Vector2(3523, 472)
+activation_area = NodePath("../..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Battle Area 4/Boss_Arena"]
+position = Vector2(4224, 308)
+shape = SubResource("RectangleShape2D_fomv7")
+
 [node name="KillZone" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 24
@@ -1566,147 +2087,6 @@ metadata/_custom_type_script = "uid://rwphv8v5rxdk"
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillZone"]
 position = Vector2(2757.0078, 695.35913)
 polygon = PackedVector2Array(-218.00781, 31.64087, -538.0078, 55.64087, -526.0078, -756.35913, -306.0078, -1164.3591, 969.9922, -1228.3591, 3109.9922, -1284.3591, 4237.992, -1204.3591, 5537.992, -1224.3591, 6481.992, -1164.3591, 8129.992, -1140.3591, 8913.992, -1056.3591, 9937.992, -956.35913, 10145.992, -328.35913, 9901.992, 659.64087, 9557.992, 1579.6409, 8845.992, 1915.6409, 7533.992, 2079.6409, 4601.992, 1895.6409, 3777.9922, 763.64087, 3721.9922, 371.64087, 2681.9922, 463.64087, 1377.9922, 491.64087, 373.9922, 415.64087, 801.9922, 915.64087, 2545.9922, 1179.6409, 3445.9922, 1375.6409, 4497.992, 2371.6409, 6361.992, 2599.6409, 8513.992, 2567.6409, 9945.992, 2303.6409, 10349.992, 1479.6409, 10729.992, -0.35913086, 10625.992, -800.35913, 10093.992, -1244.3591, 8889.992, -1548.3591, 3725.9922, -1720.3591, 509.9922, -1524.3591, -830.0078, -1424.3591, -1370.0078, -1004.35913, -1198.0078, 131.64087, -970.0078, 787.64087, -206.00781, 939.64087, -162.00781, 439.64087)
-
-[node name="Spawner" parent="." instance=ExtResource("1_gvvw3")]
-enemy_scenes = Array[PackedScene]([ExtResource("4_fomv7"), ExtResource("2_th62x")])
-
-[node name="OutsideArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OutsideArea"]
-position = Vector2(4494, 358)
-shape = SubResource("RectangleShape2D_th62x")
-
-[node name="OutsideSpawnPoints" type="Node2D" parent="."]
-
-[node name="SpawnPoint" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4451, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint2" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4515, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint3" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4579, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint4" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4643, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint20" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4707, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint21" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4771, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint22" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4835, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint23" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4899, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint24" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4963, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint25" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(5027, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint26" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(5091, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint27" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(5155, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint28" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(5219, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint29" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(5283, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint30" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(5347, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint31" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(5411, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint32" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(5475, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint5" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4387, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint6" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4323, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint7" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4259, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint8" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4195, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint9" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4131, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint10" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4067, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint11" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(4003, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint12" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(3939, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint13" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(3875, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint14" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(3843, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint15" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(3779, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint16" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(3715, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint17" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(3651, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint18" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(3587, 472)
-activation_area = NodePath("../../OutsideArea")
-
-[node name="SpawnPoint19" parent="OutsideSpawnPoints" node_paths=PackedStringArray("activation_area") instance=ExtResource("2_oayao")]
-position = Vector2(3523, 472)
-activation_area = NodePath("../../OutsideArea")
 
 [node name="Background Props" type="TileMapLayer" parent="."]
 position = Vector2(0, -8)
@@ -1797,12 +2177,10 @@ z_index = 1
 position = Vector2(590.50464, 317.77158)
 texture = ExtResource("7_oayao")
 
-[node name="Fence" parent="." instance=ExtResource("9_aym5n")]
+[node name="Area 1 Entrance" parent="." instance=ExtResource("9_aym5n")]
 z_index = 10
 position = Vector2(3459, 472)
-
-[node name="Fence2" parent="." instance=ExtResource("9_aym5n")]
-position = Vector2(5533, 472)
+script = null
 
 [node name="Skeleton" parent="." instance=ExtResource("8_qqbwj")]
 z_index = 30

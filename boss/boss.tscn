@@ -8,15 +8,15 @@
 [ext_resource type="Script" uid="uid://rwphv8v5rxdk" path="res://damage_boxes/hitbox.gd" id="3_glpsb"]
 [ext_resource type="Script" uid="uid://dhnl7x8x67py" path="res://Scripts/skeleton_targeter.gd" id="4_3bina"]
 [ext_resource type="Script" uid="uid://dgw8c2gffsb6t" path="res://damage_boxes/hurtbox.gd" id="4_205ta"]
-[ext_resource type="PackedScene" uid="uid://r2pk5nl6ec2m" path="res://ui/healthbar.tscn" id="5_3bina"]
+[ext_resource type="PackedScene" uid="uid://r2pk5nl6ec2m" path="res://UI/healthbar.tscn" id="5_3bina"]
 [ext_resource type="AudioStream" uid="uid://dhiaht5v1pm1f" path="res://audio/miss.wav" id="9_6w25r"]
 [ext_resource type="AudioStream" uid="uid://lxgn5h4swm2n" path="res://audio/big_hit.wav" id="10_yerig"]
 [ext_resource type="AudioStream" uid="uid://b4qi76f6pvf0h" path="res://audio/hit.wav" id="12_yerig"]
 
 [sub_resource type="Resource" id="Resource_205ta"]
 script = ExtResource("2_glpsb")
-health = 40.0
-max_health = 40.0
+health = 150.0
+max_health = 150.0
 metadata/_custom_type_script = "uid://8ybfhjc8hiwx"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_naudl"]
@@ -329,9 +329,10 @@ nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_6w25r")
 nodes/StateMachine/position = Vector2(40, 80)
 node_connections = [&"output", 0, &"StateMachine"]
 
-[node name="Boss" type="CharacterBody2D" groups=["bosses"]]
+[node name="Boss" type="CharacterBody2D" groups=["bosses", "enemies"]]
 collision_layer = 0
 script = ExtResource("1_hcu6l")
+walk_speed = 35.0
 stats = SubResource("Resource_205ta")
 
 [node name="Screenshaker" type="Node" parent="."]

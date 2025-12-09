@@ -56,13 +56,7 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 func die() -> void:
-	var fodder_burst_effect = FODDER_BURST_PARTICLE.instantiate()
-	get_tree().current_scene.add_child(fodder_burst_effect)
-	fodder_burst_effect.global_position = effect_marker_2d.global_position
-	
-	var fodder_spawn = FODDER_SPAWN.instantiate()
-	get_tree().current_scene.add_child(fodder_spawn)
-	fodder_spawn.global_position = anchor.global_position
+	spawn_underling()
 	
 	game.kills += 1
 	queue_free()
@@ -81,3 +75,12 @@ func _on_hurt(other_hitbox: Hitbox) -> void:
 	if stats.health <= 0 and previous_health > 0: 
 		game.kills += 1
 		playback.travel("DieState")
+
+func spawn_underling() -> void:
+	var fodder_burst_effect = FODDER_BURST_PARTICLE.instantiate()
+	get_tree().current_scene.add_child(fodder_burst_effect)
+	fodder_burst_effect.global_position = effect_marker_2d.global_position
+	
+	var fodder_spawn = FODDER_SPAWN.instantiate()
+	get_tree().current_scene.add_child(fodder_spawn)
+	fodder_spawn.global_position = anchor.global_position

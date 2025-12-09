@@ -7,10 +7,12 @@
 [ext_resource type="Script" uid="uid://dhnl7x8x67py" path="res://Scripts/skeleton_targeter.gd" id="3_6bijn"]
 [ext_resource type="Script" uid="uid://rwphv8v5rxdk" path="res://damage_boxes/hitbox.gd" id="3_c7jxe"]
 [ext_resource type="Script" uid="uid://dgw8c2gffsb6t" path="res://damage_boxes/hurtbox.gd" id="4_lmf0c"]
-[ext_resource type="PackedScene" uid="uid://r2pk5nl6ec2m" path="res://ui/healthbar.tscn" id="7_6bijn"]
+[ext_resource type="PackedScene" uid="uid://r2pk5nl6ec2m" path="res://UI/healthbar.tscn" id="7_6bijn"]
 
 [sub_resource type="Resource" id="Resource_f2ymf"]
 script = ExtResource("2_b8hbm")
+health = 15.0
+max_health = 15.0
 metadata/_custom_type_script = "uid://8ybfhjc8hiwx"
 
 [sub_resource type="Animation" id="Animation_jy0ln"]
@@ -119,6 +121,61 @@ tracks/3/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_r8dvr"]
+resource_name = "die"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Anchor/Hitbox/CollisionPolygon2D:polygon")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [PackedVector2Array()]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"die"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Anchor/Sprite2D:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.35, 0.4, 0.45000002),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_b8hbm"]
 resource_name = "hit"
 length = 0.2
@@ -212,61 +269,6 @@ tracks/2/keys = {
 "values": [PackedVector2Array()]
 }
 
-[sub_resource type="Animation" id="Animation_r8dvr"]
-resource_name = "die"
-length = 0.5
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Anchor/Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [14]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Anchor/Hitbox/CollisionPolygon2D:polygon")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [PackedVector2Array()]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"die"
-}]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Anchor/Sprite2D:self_modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.35, 0.4, 0.45000002),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r8dvr"]
 _data = {
 &"RESET": SubResource("Animation_jy0ln"),
@@ -338,7 +340,7 @@ nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_a7wjy")
 nodes/StateMachine/position = Vector2(-20, 120)
 node_connections = [&"output", 0, &"StateMachine"]
 
-[node name="elite" type="CharacterBody2D" groups=["bosses"]]
+[node name="elite" type="CharacterBody2D" groups=["elites", "enemies"]]
 script = ExtResource("1_pt1gi")
 stats = SubResource("Resource_f2ymf")
 
@@ -397,3 +399,4 @@ offset_bottom = -60.0
 position = Vector2(0, -36)
 
 [node name="HitSoundEffect" type="AudioStreamPlayer" parent="."]
+bus = &"Sounds"
