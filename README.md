@@ -1,4 +1,5 @@
 # [Cecity]
+![Banner](banner.png)
 
 ## Game Overview
  Genre:** Sidescrolling Hack-n-Slash
