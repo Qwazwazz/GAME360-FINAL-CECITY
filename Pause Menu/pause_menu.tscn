@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://wkxlruwysdwx"]
+[gd_scene load_steps=6 format=3 uid="uid://wkxlruwysdwx"]
 
 [ext_resource type="Script" uid="uid://3krxc6x84fha" path="res://Pause Menu/pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="FontFile" uid="uid://cxe413il4astg" path="res://UI/Fonts/nes_cyrillic.ttf" id="2_3limv"]
 
 [sub_resource type="Animation" id="Animation_nwcfo"]
 length = 0.001
@@ -58,9 +59,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -74.5
-offset_top = -53.5
+offset_top = -36.25
 offset_right = 74.5
-offset_bottom = 53.5
+offset_bottom = 36.25
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -69,14 +70,17 @@ layout_mode = 2
 
 [node name="Resume" type="Button" parent="PauseButtons/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3limv")
 text = "Resume"
 
 [node name="Restart" type="Button" parent="PauseButtons/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3limv")
 text = "Restart"
 
 [node name="Quit" type="Button" parent="PauseButtons/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3limv")
 text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
