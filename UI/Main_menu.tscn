@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://btftewycsi3am" path="res://Environment/Parallax/MiddleTrees.png" id="3_rlxw3"]
 [ext_resource type="Texture2D" uid="uid://b4ugbijgo54qd" path="res://Environment/Parallax/NearTrees.png" id="4_rlxw3"]
 [ext_resource type="Texture2D" uid="uid://c7batmu4heg5y" path="res://Environment/Parallax/ForeGround.png" id="5_5kukc"]
-[ext_resource type="FontFile" uid="uid://c6qceo0ymln6p" path="res://ui/Fonts/CHINESETAKEAWAY.ttf" id="6_8ovav"]
+[ext_resource type="FontFile" uid="uid://c6qceo0ymln6p" path="res://UI/Fonts/CHINESETAKEAWAY.ttf" id="6_8ovav"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siod4"]
 bg_color = Color(1, 1, 1, 1)
@@ -27,9 +27,15 @@ shadow_offset = Vector2(0, 3.41)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -437.5
+offset_top = -234.0
+offset_right = 437.5
+offset_bottom = 234.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qx8t1")
@@ -41,12 +47,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -133.0
-offset_top = -33.0
-offset_right = 132.5
-offset_bottom = 183.5
+offset_left = -34.0
+offset_top = -14.0
+offset_right = 80.0
+offset_bottom = 158.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.5, 0.5)
 theme_override_constants/separation = 23
 
 [node name="Button" type="Button" parent="VBoxContainer"]
@@ -62,21 +69,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_8ovav")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qx8t1")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_p42dv")
 text = "Start 
-"
-
-[node name="Button2" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_siod4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8ovav")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qx8t1")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_p42dv")
-text = "Options
 "
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
@@ -96,32 +88,32 @@ text = "Quit
 
 [node name="BackGround" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(578, 322)
-scale = Vector2(2.1543565, 2.0238848)
+position = Vector2(425.5, 231.99994)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_b07fi")
 
 [node name="FarTrees" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(578, 325)
-scale = Vector2(1.836328, 1.8295832)
+position = Vector2(425.5, 234.99994)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_x2ps0")
 
 [node name="MiddleTrees" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(592.00006, 311.93747)
-scale = Vector2(1.8660157, 1.8774304)
+position = Vector2(439.50006, 221.93741)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_rlxw3")
 
 [node name="NearTrees" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(590, 324.50003)
-scale = Vector2(1.865039, 1.8138889)
+position = Vector2(437.5, 234.49997)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_rlxw3")
 
 [node name="ForeGround" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(600, 302.00006)
-scale = Vector2(2.1757813, 1.9506944)
+position = Vector2(438.5, 235)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_5kukc")
 
 [node name="Label" type="Label" parent="."]
@@ -129,11 +121,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -154.0
-offset_top = 91.0
-offset_right = 154.0
-offset_bottom = 201.0
+offset_left = -91.0
+offset_top = 153.0
+offset_right = 217.0
+offset_bottom = 263.0
 grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
 theme_override_colors/font_shadow_color = Color(0.011764706, 0.011764706, 0.011764706, 1)
 theme_override_constants/shadow_offset_x = 8
 theme_override_fonts/font = ExtResource("6_8ovav")
@@ -144,5 +137,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_options_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_Quit_3_pressed"]

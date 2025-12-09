@@ -28,7 +28,7 @@ func _ready() -> void:
 	outside_area.body_entered.connect(set_area_outside)
 	cave_area_1.body_entered.connect(set_area_cave_1)
 	cave_area_2.body_entered.connect(set_area_cave_2)
-	#boss_arena.body_entered.connect(set_area_boss_arena)
+	boss_arena.body_entered.connect(set_area_boss_arena)
 	
 	
 	timer.timeout.connect(func():
@@ -73,6 +73,8 @@ func set_area_cave_2(body):
 
 func set_area_boss_arena(body):
 	if body is Skeleton:
+		game.boss_fight_start()
+		print("Boss time!!")
 		current_area = boss_arena
 		enemy_set = boss_arena_enemies
 		max_bosses = 1

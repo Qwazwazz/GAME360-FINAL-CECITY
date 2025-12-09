@@ -8,3 +8,4 @@ func _ready() -> void:
 
 func change_music() -> void:
 	self.stream = boss_music
+	self.play()

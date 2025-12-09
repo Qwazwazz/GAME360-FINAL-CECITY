@@ -39,6 +39,9 @@ func _process_kill_logic() -> void:
 		if areas_cleared == 4:
 			display_kills()
 
+func boss_fight_start() -> void:
+	boss_fight.emit()
+
 func display_arrow() -> void:
 	area_cleared.emit()
 
