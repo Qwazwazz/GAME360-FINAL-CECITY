@@ -46,11 +46,9 @@ The player and the enemies all have health bars. Enemies die when their health r
  
 ## Credits
  Music - Elhadg Diouf
-Sound - https://youtu.be/OO0T3cq_z50?si=T7V4l-NUgXGzYkLZ
- Art Assets - 
-https://youtu.be/OO0T3cq_z50?si=T7V4l-NUgXGzYkLZ
-https://sismodyn.itch.io/ancientforest
-Cameron Hise (Some Monster Sprites)
+ Sound - https://youtu.be/OO0T3cq_z50?si=T7V4l-NUgXGzYkLZ
+ Art Assets - https://youtu.be/OO0T3cq_z50?si=T7V4l-NUgXGzYkLZ | https://sismodyn.itch.io/ancientforest
+ Cameron Hise (Some Monster Sprites)
  
 ## Post-Mortem
  - What we learned
