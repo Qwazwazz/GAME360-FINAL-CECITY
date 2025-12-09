@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var game: Game = load("res://Scripts/game.tres")
+var game: Game = load("res://scripts/game.tres")
 
 @export var battle_area: Node
 @export var area_collision: Area2D

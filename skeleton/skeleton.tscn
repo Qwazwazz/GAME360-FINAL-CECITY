@@ -1,16 +1,16 @@
 [gd_scene load_steps=46 format=3 uid="uid://dxaq80evuf3gd"]
 
 [ext_resource type="Texture2D" uid="uid://b48m1blbqoctp" path="res://skeleton/skeleton.png" id="1_crlql"]
-[ext_resource type="Script" uid="uid://cx021llreyv2l" path="res://Scripts/Player/skeleton.gd" id="1_plk42"]
-[ext_resource type="Script" uid="uid://ba6n60ecfnao3" path="res://Scripts/unit_mover.gd" id="2_1xl8o"]
-[ext_resource type="Script" uid="uid://8ybfhjc8hiwx" path="res://Scripts/stats.gd" id="2_hd5up"]
+[ext_resource type="Script" uid="uid://cx021llreyv2l" path="res://scripts/player/skeleton.gd" id="1_plk42"]
+[ext_resource type="Script" uid="uid://ba6n60ecfnao3" path="res://scripts/unit_mover.gd" id="2_1xl8o"]
+[ext_resource type="Script" uid="uid://8ybfhjc8hiwx" path="res://scripts/stats.gd" id="2_hd5up"]
 [ext_resource type="Script" uid="uid://dgw8c2gffsb6t" path="res://damage_boxes/hurtbox.gd" id="3_xrf56"]
 [ext_resource type="Script" uid="uid://rwphv8v5rxdk" path="res://damage_boxes/hitbox.gd" id="4_uqgdn"]
 [ext_resource type="Script" uid="uid://bhru6gei8vjc4" path="res://skeleton/character_camera.gd" id="5_73gel"]
 [ext_resource type="AudioStream" uid="uid://ctt3gfrnwwfqw" path="res://audio/medium_hit.wav" id="8_a5ci1"]
 [ext_resource type="AudioStream" uid="uid://c2nqf35dnurnq" path="res://audio/footstep.wav" id="8_wbq12"]
 [ext_resource type="AudioStream" uid="uid://dhiaht5v1pm1f" path="res://audio/miss.wav" id="9_a5ci1"]
-[ext_resource type="PackedScene" uid="uid://r2pk5nl6ec2m" path="res://UI/healthbar.tscn" id="11_xs47n"]
+[ext_resource type="PackedScene" uid="uid://r2pk5nl6ec2m" path="res://ui/healthbar.tscn" id="11_xs47n"]
 
 [sub_resource type="Resource" id="Resource_73gel"]
 script = ExtResource("2_hd5up")

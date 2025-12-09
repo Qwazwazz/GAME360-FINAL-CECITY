@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7batmu4heg5y"
-path="res://.godot/imported/ForeGround.png-dc31ebc65f9541fe53320574eb82ca14.ctex"
+path="res://.godot/imported/ForeGround.png-fb282d523f05c667ff3907b0d42faf82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Parallax/ForeGround.png"
-dest_files=["res://.godot/imported/ForeGround.png-dc31ebc65f9541fe53320574eb82ca14.ctex"]
+source_file="res://environment/parallax/ForeGround.png"
+dest_files=["res://.godot/imported/ForeGround.png-fb282d523f05c667ff3907b0d42faf82.ctex"]
 
 [params]
 

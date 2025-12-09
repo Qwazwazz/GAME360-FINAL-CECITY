@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-var game: Game = load("res://Scripts/game.tres")
+var game: Game = load("res://scripts/game.tres")
 
 @onready var kills_label: Label = $KillsLabel
 @onready var kills_value: Label = $KillsValue

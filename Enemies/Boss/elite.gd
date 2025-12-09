@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 const HIT_BURST_PARTICLE = preload("res://effects/hit_burst_effect.tscn")
-const FODDER_BURST_PARTICLE = preload("res://Effects/fodder_burst_effect.tscn")
-const FODDER_SPAWN = preload("res://Enemies/Floaty/floater.tscn")
+const FODDER_BURST_PARTICLE = preload("res://effects/fodder_burst_effect.tscn")
+const FODDER_SPAWN = preload("res://enemies/floaty/floater.tscn")
 
-var game: Game = load("res://Scripts/game.tres")
+var game: Game = load("res://scripts/game.tres")
 
 @export var walk_speed: = 80.0
 @export var attack_range: = 32.0

@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=3 uid="uid://wkxlruwysdwx"]
+
+[ext_resource type="Script" uid="uid://3krxc6x84fha" path="res://pausemenu/pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="FontFile" uid="uid://cxe413il4astg" path="res://ui/fonts/nes_cyrillic.ttf" id="2_3limv"]
+
+[sub_resource type="Animation" id="Animation_nwcfo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PauseButtons:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hdmo1"]
+resource_name = "pause"
+length = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PauseButtons:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.0002, 0.010043205),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05uyy"]
+_data = {
+&"RESET": SubResource("Animation_nwcfo"),
+&"pause": SubResource("Animation_hdmo1")
+}
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hdmo1")
+
+[node name="PauseButtons" type="PanelContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.5
+offset_top = -36.25
+offset_right = 74.5
+offset_bottom = 36.25
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseButtons"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="PauseButtons/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3limv")
+text = "Resume"
+
+[node name="Restart" type="Button" parent="PauseButtons/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3limv")
+text = "Restart"
+
+[node name="Quit" type="Button" parent="PauseButtons/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3limv")
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_05uyy")
+}
+
+[connection signal="pressed" from="PauseButtons/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseButtons/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PauseButtons/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

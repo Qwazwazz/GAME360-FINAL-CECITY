@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1epvei4kiwlh"
-path="res://.godot/imported/FrontBushes.png-327c9b127deed8d07d7d0a79a151d4e4.ctex"
+path="res://.godot/imported/FrontBushes.png-acd625b1b74f13512a5a817eb7aededb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Parallax/FrontBushes.png"
-dest_files=["res://.godot/imported/FrontBushes.png-327c9b127deed8d07d7d0a79a151d4e4.ctex"]
+source_file="res://environment/parallax/FrontBushes.png"
+dest_files=["res://.godot/imported/FrontBushes.png-acd625b1b74f13512a5a817eb7aededb.ctex"]
 
 [params]
 

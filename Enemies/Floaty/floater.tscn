@@ -1,9 +1,9 @@
 [gd_scene load_steps=18 format=3 uid="uid://c40dcc28i36vt"]
 
-[ext_resource type="Script" uid="uid://dibopfbi4kfy6" path="res://Enemies/Floaty/floater.gd" id="1_akbta"]
-[ext_resource type="Texture2D" uid="uid://duknkikgn08kb" path="res://Enemies/Floaty/Cecity_Fodder.png" id="1_mnhii"]
+[ext_resource type="Script" uid="uid://dibopfbi4kfy6" path="res://enemies/floaty/floater.gd" id="1_akbta"]
+[ext_resource type="Texture2D" uid="uid://duknkikgn08kb" path="res://enemies/floaty/Cecity_Fodder.png" id="1_mnhii"]
 [ext_resource type="Script" uid="uid://dgw8c2gffsb6t" path="res://damage_boxes/hurtbox.gd" id="2_akbta"]
-[ext_resource type="Script" uid="uid://dhnl7x8x67py" path="res://Scripts/skeleton_targeter.gd" id="2_e17p3"]
+[ext_resource type="Script" uid="uid://dhnl7x8x67py" path="res://scripts/skeleton_targeter.gd" id="2_e17p3"]
 [ext_resource type="Script" uid="uid://rwphv8v5rxdk" path="res://damage_boxes/hitbox.gd" id="3_e17p3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vbo6i"]

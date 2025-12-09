@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btftewycsi3am"
-path="res://.godot/imported/MiddleTrees.png-0ba0611bbb8bf570542dee3954d53fde.ctex"
+path="res://.godot/imported/MiddleTrees.png-ed4f84aa95612844e941dfb5b0669abb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Parallax/MiddleTrees.png"
-dest_files=["res://.godot/imported/MiddleTrees.png-0ba0611bbb8bf570542dee3954d53fde.ctex"]
+source_file="res://environment/parallax/MiddleTrees.png"
+dest_files=["res://.godot/imported/MiddleTrees.png-ed4f84aa95612844e941dfb5b0669abb.ctex"]
 
 [params]
 

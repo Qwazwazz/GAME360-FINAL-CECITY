@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b1i1akrwpce5a"
-path="res://.godot/imported/jsa_lovechinese.ttf-aa9e78d6128bc624bd65cb8e8597f423.fontdata"
+path="res://.godot/imported/jsa_lovechinese.ttf-d5028bd10970acde1100c81b69434208.fontdata"
 
 [deps]
 
-source_file="res://UI/Fonts/jsa_lovechinese.ttf"
-dest_files=["res://.godot/imported/jsa_lovechinese.ttf-aa9e78d6128bc624bd65cb8e8597f423.fontdata"]
+source_file="res://ui/fonts/jsa_lovechinese.ttf"
+dest_files=["res://.godot/imported/jsa_lovechinese.ttf-d5028bd10970acde1100c81b69434208.fontdata"]
 
 [params]
 

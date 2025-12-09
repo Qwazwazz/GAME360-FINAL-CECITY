@@ -1,13 +1,13 @@
 [gd_scene load_steps=29 format=3 uid="uid://cciwyqvwikp07"]
 
-[ext_resource type="Texture2D" uid="uid://b112s7kv6adss" path="res://Enemies/Boss/Cecity_boss_sheet.png" id="1_n0275"]
-[ext_resource type="Script" uid="uid://b2w7ehl1pxnjk" path="res://Enemies/Boss/elite.gd" id="1_pt1gi"]
-[ext_resource type="Script" uid="uid://8ybfhjc8hiwx" path="res://Scripts/stats.gd" id="2_b8hbm"]
-[ext_resource type="Script" uid="uid://ba6n60ecfnao3" path="res://Scripts/unit_mover.gd" id="2_lmf0c"]
-[ext_resource type="Script" uid="uid://dhnl7x8x67py" path="res://Scripts/skeleton_targeter.gd" id="3_6bijn"]
+[ext_resource type="Texture2D" uid="uid://b112s7kv6adss" path="res://enemies/boss/Cecity_boss_sheet.png" id="1_n0275"]
+[ext_resource type="Script" uid="uid://b2w7ehl1pxnjk" path="res://enemies/boss/elite.gd" id="1_pt1gi"]
+[ext_resource type="Script" uid="uid://8ybfhjc8hiwx" path="res://scripts/stats.gd" id="2_b8hbm"]
+[ext_resource type="Script" uid="uid://ba6n60ecfnao3" path="res://scripts/unit_mover.gd" id="2_lmf0c"]
+[ext_resource type="Script" uid="uid://dhnl7x8x67py" path="res://scripts/skeleton_targeter.gd" id="3_6bijn"]
 [ext_resource type="Script" uid="uid://rwphv8v5rxdk" path="res://damage_boxes/hitbox.gd" id="3_c7jxe"]
 [ext_resource type="Script" uid="uid://dgw8c2gffsb6t" path="res://damage_boxes/hurtbox.gd" id="4_lmf0c"]
-[ext_resource type="PackedScene" uid="uid://r2pk5nl6ec2m" path="res://UI/healthbar.tscn" id="7_6bijn"]
+[ext_resource type="PackedScene" uid="uid://r2pk5nl6ec2m" path="res://ui/healthbar.tscn" id="7_6bijn"]
 
 [sub_resource type="Resource" id="Resource_f2ymf"]
 script = ExtResource("2_b8hbm")

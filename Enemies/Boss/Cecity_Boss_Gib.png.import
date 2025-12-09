@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqwn45cpyhowt"
-path="res://.godot/imported/Cecity_Boss_Gib.png-5c27db9fa3631015851e7798211563cb.ctex"
+path="res://.godot/imported/Cecity_Boss_Gib.png-b7a1e5f4af5cabb269c4962629664207.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/Boss/Cecity_Boss_Gib.png"
-dest_files=["res://.godot/imported/Cecity_Boss_Gib.png-5c27db9fa3631015851e7798211563cb.ctex"]
+source_file="res://enemies/boss/Cecity_Boss_Gib.png"
+dest_files=["res://.godot/imported/Cecity_Boss_Gib.png-b7a1e5f4af5cabb269c4962629664207.ctex"]
 
 [params]
 

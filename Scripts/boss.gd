@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const HIT_BURST_PARTICLE = preload("res://effects/hit_burst_effect.tscn")
 
-var game: Game = load("res://Scripts/game.tres")
+var game: Game = load("res://scripts/game.tres")
 
 @export var walk_speed: = 30.0
 @export var attack_range: = 150.0

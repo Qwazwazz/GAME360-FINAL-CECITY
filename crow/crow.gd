@@ -2,7 +2,7 @@ class_name FlyingEnemy extends Node2D
 
 const FEATHER_BURST_EFFECT = preload("res://crow/feather_burst_effect.tscn")
 
-var game: Game = load("res://Scripts/game.tres")
+var game: Game = load("res://scripts/game.tres")
 
 @export var direction: = Vector2.LEFT
 @export var speed: = 75

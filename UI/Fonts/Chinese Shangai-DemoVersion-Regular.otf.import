@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://3qq7m2qwqd38"
-path="res://.godot/imported/Chinese Shangai-DemoVersion-Regular.otf-2f6023afa9ee2f751d7345cd07728adc.fontdata"
+path="res://.godot/imported/Chinese Shangai-DemoVersion-Regular.otf-06cd0b5d675f139f0ad91129e446bc7c.fontdata"
 
 [deps]
 
-source_file="res://UI/Fonts/Chinese Shangai-DemoVersion-Regular.otf"
-dest_files=["res://.godot/imported/Chinese Shangai-DemoVersion-Regular.otf-2f6023afa9ee2f751d7345cd07728adc.fontdata"]
+source_file="res://ui/fonts/Chinese Shangai-DemoVersion-Regular.otf"
+dest_files=["res://.godot/imported/Chinese Shangai-DemoVersion-Regular.otf-06cd0b5d675f139f0ad91129e446bc7c.fontdata"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c6qceo0ymln6p"
-path="res://.godot/imported/CHINESETAKEAWAY.ttf-9e12f5de4df770ebee5a9d374533f141.fontdata"
+path="res://.godot/imported/CHINESETAKEAWAY.ttf-1de9a4dd34295e16b5f682dcff842707.fontdata"
 
 [deps]
 
-source_file="res://UI/Fonts/CHINESETAKEAWAY.ttf"
-dest_files=["res://.godot/imported/CHINESETAKEAWAY.ttf-9e12f5de4df770ebee5a9d374533f141.fontdata"]
+source_file="res://ui/fonts/CHINESETAKEAWAY.ttf"
+dest_files=["res://.godot/imported/CHINESETAKEAWAY.ttf-1de9a4dd34295e16b5f682dcff842707.fontdata"]
 
 [params]
 
