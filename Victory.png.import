@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7eyyqk1am0r8"
-path="res://.godot/imported/Cecity_boss_sheet_broken_also.png-57cc432e5d4496c1f76014c4d35f66f8.ctex"
+uid="uid://sqmdlo4vhr4y"
+path="res://.godot/imported/Victory.png-f6d65c7ad38edd15367f8ca6844c50d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemies/boss/Cecity_boss_sheet_broken_also.png"
-dest_files=["res://.godot/imported/Cecity_boss_sheet_broken_also.png-57cc432e5d4496c1f76014c4d35f66f8.ctex"]
+source_file="res://Victory.png"
+dest_files=["res://.godot/imported/Victory.png-f6d65c7ad38edd15367f8ca6844c50d3.ctex"]
 
 [params]
 
