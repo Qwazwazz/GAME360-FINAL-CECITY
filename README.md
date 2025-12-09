@@ -35,10 +35,13 @@ The player and the enemies all have health bars. Enemies die when their health r
 - Development Time: 1 Month on and off. We cannot estimate our total hours.
 ##  Screenshots
 
+![](gameplay.png)
 *Main gameplay showing combat*
 
+![](menu.png)
 *Main menu interface*
 
+![](Victory.png)
 *Victory screen*
  
 ## Credits
