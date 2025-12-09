@@ -31,7 +31,7 @@ Implemented Mechanics
 Menu screens, including a main menu, pause menu, and end screens, are present. The main menu screen has options to start and quit. The pause menu has options to resume, restart, and quit. Both the game over and victory screens have restart and quit functions.
 The player and the enemies all have health bars. Enemies die when their health reaches zero. When the player has zero health, the game over screen appears. When the boss at the end dies, the player wins and the victory screen is shown.
 ## Development Statistics
-- Total Commits: 41
+- Total Commits: 49
 - Development Time: 1 Month on and off. We cannot estimate our total hours.
 ##  Screenshots
 
