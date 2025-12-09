@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ciba8orbr8d8a"]
 
-[ext_resource type="Script" uid="uid://cvkjurf4u8cw7" path="res://Environment/GraveEnvironment/fence.gd" id="1_41lvg"]
-[ext_resource type="Texture2D" uid="uid://bxuwwgiw8tdiu" path="res://Environment/GraveEnvironment/fence.png" id="1_hsy3x"]
+[ext_resource type="Script" uid="uid://cvkjurf4u8cw7" path="res://environment/graveenvironment/fence.gd" id="1_41lvg"]
+[ext_resource type="Texture2D" uid="uid://bxuwwgiw8tdiu" path="res://environment/graveenvironment/fence.png" id="1_hsy3x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gl7b"]
 size = Vector2(12, 38)

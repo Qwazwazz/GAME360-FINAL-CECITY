@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://ce56y2hs8xecq"]
 
-[ext_resource type="Script" uid="uid://d3nfugh7idhv0" path="res://Scripts/gpu_burst_particles_2d.gd" id="1_kp7ix"]
-[ext_resource type="Texture2D" uid="uid://di11sk0awrr6t" path="res://Enemies/Floaty/Cecity_Fodder_Gib.png" id="1_m5qoj"]
-[ext_resource type="Material" uid="uid://fyhpd2mr0g57" path="res://Effects/burst_settings.material" id="2_0hma7"]
+[ext_resource type="Script" uid="uid://d3nfugh7idhv0" path="res://scripts/gpu_burst_particles_2d.gd" id="1_kp7ix"]
+[ext_resource type="Texture2D" uid="uid://di11sk0awrr6t" path="res://enemies/floaty/Cecity_Fodder_Gib.png" id="1_m5qoj"]
+[ext_resource type="Material" uid="uid://fyhpd2mr0g57" path="res://effects/burst_settings.material" id="2_0hma7"]
 
 [node name="fodder_burst_effect" type="GPUParticles2D"]
 amount = 15

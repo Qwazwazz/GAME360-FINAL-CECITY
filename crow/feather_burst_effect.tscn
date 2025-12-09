@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://biytckjxsbfst"]
 
-[ext_resource type="Script" uid="uid://d3nfugh7idhv0" path="res://Scripts/gpu_burst_particles_2d.gd" id="1_2mie3"]
-[ext_resource type="Texture2D" uid="uid://co3ef2mp6xmrn" path="res://Effects/feather.png" id="1_h02c5"]
-[ext_resource type="Material" uid="uid://fyhpd2mr0g57" path="res://Effects/burst_settings.material" id="2_qnj37"]
+[ext_resource type="Script" uid="uid://d3nfugh7idhv0" path="res://scripts/gpu_burst_particles_2d.gd" id="1_2mie3"]
+[ext_resource type="Texture2D" uid="uid://co3ef2mp6xmrn" path="res://effects/feather.png" id="1_h02c5"]
+[ext_resource type="Material" uid="uid://fyhpd2mr0g57" path="res://effects/burst_settings.material" id="2_qnj37"]
 
 [node name="FeatherBurstEffect" type="GPUParticles2D"]
 amount = 16

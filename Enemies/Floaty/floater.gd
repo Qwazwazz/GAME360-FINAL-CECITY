@@ -1,8 +1,8 @@
 extends Node2D
 
-const FODDER_BURST_EFFECT = preload("res://Effects/fodder_burst_effect.tscn")
+const FODDER_BURST_EFFECT = preload("res://effects/fodder_burst_effect.tscn")
 
-var game: Game = load("res://Scripts/game.tres")
+var game: Game = load("res://scripts/game.tres")
 
 @export var direction: = Vector2.LEFT
 @export var speed: = 40

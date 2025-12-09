@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3x47nhqw2jsy"
-path="res://.godot/imported/Forest Prop.png-a3c013a49aa6776846c4747c71fbc473.ctex"
+path="res://.godot/imported/Forest Prop.png-5927f1a26d05a82dbd731dbeb2330f77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Parallax/Forest Prop.png"
-dest_files=["res://.godot/imported/Forest Prop.png-a3c013a49aa6776846c4747c71fbc473.ctex"]
+source_file="res://environment/parallax/Forest Prop.png"
+dest_files=["res://.godot/imported/Forest Prop.png-5927f1a26d05a82dbd731dbeb2330f77.ctex"]
 
 [params]
 

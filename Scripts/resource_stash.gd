@@ -1,3 +1,3 @@
 extends Node
 
-var game: Game = load("res://Scripts/game.tres")
+var game: Game = load("res://scripts/game.tres")

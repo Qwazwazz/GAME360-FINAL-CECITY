@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ResourceStash="*res://Scripts/resource_stash.gd"
+ResourceStash="*res://scripts/resource_stash.gd"
 Music="*res://audio/music.tscn"
 
 [display]

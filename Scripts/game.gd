@@ -10,6 +10,10 @@ var kills: = 0 :
 			kills_changed.emit()
 		_process_kill_logic()
 
+signal game_started()
+
+signal entered_menu()
+
 signal kills_changed()
 
 signal area_cleared()
@@ -33,11 +37,14 @@ func _process_kill_logic() -> void:
 		display_arrow()
 		print("Area Cleared")
 		
-		if areas_cleared == 3:
-			boss_fight.emit()
-		
 		if areas_cleared == 4:
 			display_kills()
+
+func entered_game_menu() -> void:
+	entered_menu.emit()
+
+func first_area_start() -> void:
+	game_started.emit()
 
 func boss_fight_start() -> void:
 	boss_fight.emit()

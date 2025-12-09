@@ -1,7 +1,7 @@
 extends Node
 
 const BOSS_ENEMY = preload("res://boss/boss.tscn")
-const ELITE_ENEMY = preload("res://Enemies/Boss/elite.tscn")
+const ELITE_ENEMY = preload("res://enemies/boss/elite.tscn")
 
 @export var outside_enemies: Array[PackedScene]
 @export var cave_enemies_1: Array[PackedScene]
@@ -20,7 +20,7 @@ var max_enemies: = 20
 var max_bosses: = 0
 var max_elites: = 0
 
-var game: Game = load("res://Scripts/game.tres")
+var game: Game = load("res://scripts/game.tres")
 
 @onready var timer: Timer = $Timer
 
@@ -56,6 +56,7 @@ func _ready() -> void:
 
 func set_area_outside(body):
 	if body is Skeleton:
+		game.first_area_start()
 		current_area = outside_area
 		enemy_set = outside_enemies
 

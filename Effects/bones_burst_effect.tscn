@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bjvc4g1k6jmh1"]
 
-[ext_resource type="Texture2D" uid="uid://hhd4dm5wgrpg" path="res://Effects/skeleton_bones.png" id="1_xfs0q"]
-[ext_resource type="Script" path="res://Scripts/gpu_burst_particles_2d.gd" id="2_wii8o"]
+[ext_resource type="Texture2D" uid="uid://hhd4dm5wgrpg" path="res://effects/skeleton_bones.png" id="1_xfs0q"]
+[ext_resource type="Script" uid="uid://d3nfugh7idhv0" path="res://scripts/gpu_burst_particles_2d.gd" id="2_wii8o"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xfs0q"]
 particles_animation = true

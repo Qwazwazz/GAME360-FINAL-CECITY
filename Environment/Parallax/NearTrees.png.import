@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4ugbijgo54qd"
-path="res://.godot/imported/NearTrees.png-bc5884d2765d6ad5f4f7819e5ea4abdc.ctex"
+path="res://.godot/imported/NearTrees.png-058eb83d8b9675df91fb3eece74e66ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Environment/Parallax/NearTrees.png"
-dest_files=["res://.godot/imported/NearTrees.png-bc5884d2765d6ad5f4f7819e5ea4abdc.ctex"]
+source_file="res://environment/parallax/NearTrees.png"
+dest_files=["res://.godot/imported/NearTrees.png-058eb83d8b9675df91fb3eece74e66ff.ctex"]
 
 [params]
 

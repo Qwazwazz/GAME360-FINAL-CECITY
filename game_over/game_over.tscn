@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cuhpcnopm3wsn" path="res://game_over/game_over.png" id="1_fq5u1"]
 [ext_resource type="Script" uid="uid://b083v8cl0kq2f" path="res://game_over/game_over.gd" id="1_ko24k"]
-[ext_resource type="PackedScene" uid="uid://bi1ddsgirna8b" path="res://UI/kills_ui.tscn" id="2_ko24k"]
-[ext_resource type="LabelSettings" uid="uid://csxlf2hot5oiy" path="res://UI/Fonts/default_label_settings.tres" id="3_otqin"]
-[ext_resource type="FontFile" uid="uid://cxe413il4astg" path="res://UI/Fonts/nes_cyrillic.ttf" id="5_otqin"]
+[ext_resource type="PackedScene" uid="uid://bi1ddsgirna8b" path="res://ui/kills_ui.tscn" id="2_ko24k"]
+[ext_resource type="LabelSettings" uid="uid://csxlf2hot5oiy" path="res://ui/fonts/default_label_settings.tres" id="3_otqin"]
+[ext_resource type="FontFile" uid="uid://cxe413il4astg" path="res://ui/fonts/nes_cyrillic.ttf" id="5_otqin"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3

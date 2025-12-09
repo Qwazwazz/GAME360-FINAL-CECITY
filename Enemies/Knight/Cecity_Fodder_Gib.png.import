@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btwif5061vwue"
-path="res://.godot/imported/Cecity_Fodder_Gib.png-daef7dcf4a3ae2d988405527a1244390.ctex"
+path="res://.godot/imported/Cecity_Fodder_Gib.png-9d19311a3ac5f9bd332cefab2435dd3d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/Knight/Cecity_Fodder_Gib.png"
-dest_files=["res://.godot/imported/Cecity_Fodder_Gib.png-daef7dcf4a3ae2d988405527a1244390.ctex"]
+source_file="res://enemies/knight/Cecity_Fodder_Gib.png"
+dest_files=["res://.godot/imported/Cecity_Fodder_Gib.png-9d19311a3ac5f9bd332cefab2435dd3d.ctex"]
 
 [params]
 
